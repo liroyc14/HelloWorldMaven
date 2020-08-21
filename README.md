@@ -35,3 +35,8 @@ docker exec d9f8 cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 Afterwards, I chose to install Jenkins with suggested plugins.
+
+Used [This Guide](https://www.tutorialspoint.com/jenkins/jenkins_maven_setup.htm) to configure Maven in Jenkins:
+
+![MavenSetup](MavenSetup.png)
+
