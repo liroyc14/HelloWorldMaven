@@ -40,3 +40,7 @@ Used [This Guide](https://www.tutorialspoint.com/jenkins/jenkins_maven_setup.htm
 
 ![MavenSetup](MavenSetup.png)
 
+## Task 4 + 5 - Fork repo and Create a Pipeline job that will checkout from your own fork
+Configured pipeline to my repository:
+![pipeconf1](pipeconf1.png)
+![pipeconf2](pipeconf2.png)
