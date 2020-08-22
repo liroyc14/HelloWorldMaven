@@ -44,3 +44,8 @@ Used [This Guide](https://www.tutorialspoint.com/jenkins/jenkins_maven_setup.htm
 Configured pipeline to my repository:
 ![pipeconf1](pipeconf1.png)
 ![pipeconf2](pipeconf2.png)
+
+## Task 6 - Define job
+Defined job to checkout code from my repository in the previous step.
+
+Use Maven to compile the project:
