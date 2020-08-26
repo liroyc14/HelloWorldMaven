@@ -2,8 +2,8 @@ pipeline {
     agent any
     stages {
         stage('Build') { 
-            withMaven(maven : 'maven3.3.9') {
-                steps {
+            steps {
+                withMaven(maven : 'maven3.3.9') {
                     sh 'mvn -B -DskipTests clean package' 
                 }
             }
