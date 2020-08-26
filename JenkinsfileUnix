@@ -5,6 +5,7 @@ pipeline {
             git url: 'https://github.com/jfrogdev/project-examples.git'
         }
         stage('Build') { 
+            withMaven(maven : 'maven3.3.9')
             steps {
                 sh 'mvn -B -DskipTests clean package' 
             }
