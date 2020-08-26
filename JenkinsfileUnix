@@ -1,22 +1,27 @@
-pipeline {
-    agent any
+pipeline { 
+    agent any 
     stages {
-        stage('Clone sources') {
-            git url: 'https://github.com/jfrogdev/project-examples.git'
-        }
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                withMaven(maven : 'apache-maven-3.3.3'){
+                        sh "mvn clean compile"
+                }
             }
         }
-        stage('Test') {
+        stage('Test'){
             steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+                withMaven(maven : 'apache-maven-3.3.3'){
+                        sh "mvn test"
                 }
+
+            }
+        }
+        stage('Deploy') {
+            steps {
+               withMaven(maven : 'apache-maven-3.3.3'){
+                        sh "mvn deploy"
+                }
+
             }
         }
     }
