@@ -2,6 +2,9 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone sources') {
+            git url: 'https://github.com/jfrogdev/project-examples.git'
+        }
         stage ('Compile Stage') {
             steps {
                 withMaven(maven : 'maven3.3.9') {
