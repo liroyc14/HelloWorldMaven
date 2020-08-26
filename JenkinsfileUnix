@@ -2,18 +2,19 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
+            tools {
+                maven 'maven3.3.9'
+            }
             steps {
-                withMaven(maven : 'maven3.3.9'){
-                        sh "mvn clean compile"
-                }
+                sh "mvn clean compile"
             }
         }
-        stage('Test'){
+        stage('Test'){ 
+            tools {
+                maven 'maven3.3.9'
+            }
             steps {
-                withMaven(maven : 'maven3.3.9'){
-                        sh "mvn test"
-                }
-
+                sh "mvn test"
             }
         }
     }
