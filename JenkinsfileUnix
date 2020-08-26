@@ -4,7 +4,6 @@ pipeline {
         stage('Build') { 
             agent {
                 node {
-                    label 'label1'
                     customWorkspace 'main/java/com/test/HelloWorldMaven'
                 }
             }
@@ -18,7 +17,6 @@ pipeline {
         stage('Test'){ 
             agent {
                 node {
-                    label 'label2'
                     customWorkspace 'test/java/com/test/HelloWorldMaven'
                 }
             } 
